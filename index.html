@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #btn{
+            font-size: 25px;
+            height: 50px;
+            width: 50px;
+            margin: 10px 10px 10px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <center>
+    <div class="container">
+        <p class="lead mt-5 " style="font-size: 50px;">Choose an Operator</p>
+                <button type="button" id="btn" class="btn btn-primary" data-toggle="modal" data-target=".bd-add-modal-sm"
+                        >+</button>
+                
+                <div class="modal fade bd-add-modal-sm" tabindex="-1" role="dialog"
+                    aria-labelledby="mySmallModalLabelAdd" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary">
+                                <h5 class="modal-title" style="color: white;"id="AddModalLabel">Addition</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-left">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="value-one" class="col-form-label">Value 1</label>
+                                        <input type="text" class="form-control" id="add1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="value-two" class="col-form-label">Value 2</label>
+                                        <input type="text" class="form-control" id="add2">
+                                    </div>
+                                    <div class="lead">
+                                        <p>Result : <span id="result"> 0 </span></p>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="emptyStringAdd">Clear</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="btn" class="btn btn-primary" data-toggle="modal"
+                        data-target=".bd-sub-modal-sm ">-</button>
+                
+                <div class="modal fade bd-sub-modal-sm " tabindex="-1" role="dialog"
+                    aria-labelledby="mySmallModalLabelSub" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+
+                            <div class="modal-header bg-primary">
+                                <h5 class="modal-title " style="color: white;"id="SubModalLabel">Subtraction</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-left">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="value-one" class="col-form-label">Value 1</label>
+                                        <input type="text" class="form-control" id="sub1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="value-two" class="col-form-label">Value 2</label>
+                                        <input type="text" class="form-control" id="sub2">
+                                    </div>
+                                    <div class="lead">
+                                        <p>Result : <span id="resultSub"> 0 </span></p>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="emptyStringSub" >Clear</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <button type="button" id="btn" class="btn btn-primary" data-toggle="modal" data-target=".bd-mul-modal-sm"
+                    >*</button>
+                
+
+                <div class="modal fade bd-mul-modal-sm" tabindex="-1" role="dialog"
+                    aria-labelledby="mySmallModalLabelMul" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content ">
+                            <div class="modal-header bg-primary">
+                                <h5 class="modal-title"style="color: white;" id="MulModalLabel">Multipication</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-left">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="value-one" class="col-form-label">Value 1</label>
+                                        <input type="text" class="form-control" id="mul1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="value-two" class="col-form-label">Value 2</label>
+                                        <input type="text" class="form-control" id="mul2">
+                                    </div>
+                                    <div class="lead">
+                                        <p>Result : <span id="resultMul"> 0 </span></p>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="emptyStringMul" >Clear</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <button type="button" id="btn" class="btn btn-primary" data-toggle="modal" data-target=".bd-divi-modal-sm"
+                    >/</button>
+                
+
+                <div class="modal fade bd-divi-modal-sm" tabindex="-1" role="dialog"
+                    aria-labelledby="mySmallModalLabelDivi" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header  bg-primary">
+                                <h5 class="modal-title " style="color: white;" id="DiviModalLabel">Division</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-left">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="value-one" class="col-form-label">Value 1</label>
+                                        <input type="text" class="form-control" id="divi1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="value-two" class="col-form-label">Value 2</label>
+                                        <input type="text" class="form-control" id="divi2">
+                                    </div>
+                                    <div class="lead">
+                                        <p>Result : <span id="resultDivi"> 0 </span></p>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="emptyStringDivi">Clear</button>
+                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+</center>
+    <script>
+
+        $(document).ready(function () {
+            $("#add2").keyup(function () {
+
+                var result;
+
+                result = parseFloat($("#add1").val()) + parseFloat($("#add2").val());
+                if ($('#add2').val() == "") {
+                    document.getElementById("result").innerHTML = "0";
+
+                } else {
+                    document.getElementById("result").innerHTML = result;
+                }
+
+            });
+            $("#sub2").keyup(function () {
+
+                var result;
+
+                result = parseFloat($("#sub1").val()) - parseFloat($("#sub2").val());
+
+                if ($('#sub2').val() == "") {
+                    document.getElementById("resultSub").innerHTML = "0";
+
+                } else {
+                    document.getElementById("resultSub").innerHTML = result;
+                }
+
+            });
+            $("#mul2").keyup(function () {
+
+                var result;
+
+                result = parseFloat($("#mul1").val()) * parseFloat($("#mul2").val());
+                if ($('#mul2').val() == "") {
+                    document.getElementById("resultMul").innerHTML = "0";
+
+                } else {
+                    document.getElementById("resultMul").innerHTML = result;
+                }
+
+            });
+            $("#divi2").keyup(function () {
+
+                var result;
+
+                result = parseFloat($("#divi1").val()) / parseFloat($("#divi2").val());
+
+                if ($('#divi2').val() == "") {
+                    document.getElementById("resultDivi").innerHTML = "0";
+
+                } else {
+                    document.getElementById("resultDivi").innerHTML = result;
+                }
+
+            });
+            $('#emptyStringAdd').on('click',function(){
+                $('#add1').val("");
+                $('#add2').val("");
+                $('#result').html("0");
+            })
+            $('#emptyStringSub').on('click',function(){
+                $('#sub1').val("");
+                $('#sub2').val("");
+                $('#resultSub').html("0");
+            })
+            $('#emptyStringMul').on('click',function(){
+                $('#mul1').val("");
+                $('#mul2').val("");
+                $('#resultMul').html("0");
+            })
+            $('#emptyStringDivi').on('click',function(){
+                $('#divi1').val("");
+                $('#divi2').val("");
+                $('#resultDivi').html("0");
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>
