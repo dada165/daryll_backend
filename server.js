@@ -15,10 +15,10 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 
-app.get('/',(req,res) =>{
-    // res.send('<marquee><h1 style = "color:blue;font-family:monospace;font-size:50px">Daryll Gwapo</h1></marquee>')
-    res.sendFile(path.join(__dirname + '/index1.html'));
-})
+// app.get('/',(req,res) =>{
+//     // res.send('<marquee><h1 style = "color:blue;font-family:monospace;font-size:50px">Daryll Gwapo</h1></marquee>')
+//     res.sendFile(path.join(__dirname + '/index1.html'));
+// })
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
